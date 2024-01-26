@@ -8,25 +8,6 @@ pool:
 steps:
 - script: echo K8S Terrafoam Azure!
   displayName: 'Run a one-line script'
-- task: TerraformCLI@2
-  inputs:
-    command: 'init'
-    workingDirectory: '$(System.DefaultWorkingDirectory)/configuration/iaac/azure/kubernetes'
-    backendType: 'azurerm'
-- task: TerraformCLI@2
-  inputs:
-    command: 'init'
-    workingDirectory: '$(System.DefaultWorkingDirectory)/configuration/iaac/azure/kubernetes'
-    commandOptions: '-var client_id=$(client_id) -var client_secret=$(client_secret)'
-    backendType: 'azurerm'
-    backendServiceArm: 'azure-resource-manager-service-connection'
-    ensureBackend: true
-    backendAzureRmResourceGroupName: 'terrafoam-backend-rg'
-    backendAzureRmResourceGroupLocation: 'westeurope'
-    backendAzureRmStorageAccountName: 'storageacctwahabxyz'
-    backendAzureRmContainerName: 'storageacctwahabcontainer'
-    backendAzureRmKey: 'kubernetes-dev-tfstate'
-    allowTelemetryCollection: true
     
     
 
